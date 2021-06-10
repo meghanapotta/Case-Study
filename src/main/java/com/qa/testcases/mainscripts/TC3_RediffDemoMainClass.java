@@ -11,28 +11,29 @@ public class TC3_RediffDemoMainClass {
 				System.setProperty("webdriver.chrome.driver","D:\\MyFirstMavenProject\\conf\\chromedriver.exe");
 				WebDriver driver = new ChromeDriver();
 				driver.get("https://www.rediff.com/");
-				String Homepagetittle=driver.getTitle();
-				System.out.println("title of homepage is "+Homepagetittle);
-				RediffDemoPage rediffmain=new RediffDemoPage(driver);
+				String hpage=driver.getTitle();
+				System.out.println("title of homepage is: " + hpage);
+				RediffDemoPage rpage=new RediffDemoPage(driver);
 				
-				rediffmain.getsigninlink().click();
-				String loginpage=driver.getTitle();
-				System.out.println("title of loginpage is "+loginpage);
+				rpage.getsigninlink().click();
+				String loginpage = driver.getTitle();
+				System.out.println("title of loginpage is: " + loginpage);
 				driver.navigate().back();
-				String currenthomepage=driver.getTitle();
-				System.out.println("current homepage is "+currenthomepage);
-				if(currenthomepage.equals(Homepagetittle))
+				String currenthomepage = driver.getTitle();
+				System.out.println("current homepage is: " + currenthomepage);
+				if(currenthomepage.equals(hpage))
 				{
-					System.out.println("Home page tittle is same as search");
+					System.out.println("Home page title is same");
 				}
-				else
-					System.out.println("Home page is not same");
+				else {
+					System.out.println("Home page title is not same");
+				}
 				driver.navigate().forward();
 				String currentloginpage=driver.getTitle();
-				System.out.println("current login page is "+currentloginpage);
+				System.out.println("current login page is: " + currentloginpage);
 				if(currentloginpage.equals(loginpage))
 				{
-					System.out.println("login page tittle is same as search");
+					System.out.println("login page title is same");
 				}
 				else {
 					System.out.println("login page is not same");

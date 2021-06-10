@@ -30,7 +30,7 @@ public class TC3_RadioDemoMainclass {
 			button.getCheckOrangeBtn().click();
 			System.out.println("orange and yellow are selected");
 		}
-		//driver.close();
+		driver.close();
 	}
 
 }

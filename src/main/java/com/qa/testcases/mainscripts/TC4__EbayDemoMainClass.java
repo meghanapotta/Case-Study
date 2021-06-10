@@ -11,12 +11,11 @@ public class TC4__EbayDemoMainClass {
 		System.setProperty("webdriver.chrome.driver","D:\\MyFirstMavenProject\\conf\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		
-		EbayDemoPage ebay = new EbayDemoPage(driver);
+		EbayDemoPage epage = new EbayDemoPage(driver);
 		driver.get("https://www.ebay.com/");
-		System.out.println(ebay.getClickRegisterLink().getAttribute("href"));
-		System.out.println(ebay.getClickRegisterLink().getAttribute("_sp"));
-		driver.close();
+		System.out.println(epage.getRegistrationLink().getAttribute("href"));
+		System.out.println(epage.getRegistrationLink().getAttribute("_sp"));
+	    //driver.close();
 	}
 
 }

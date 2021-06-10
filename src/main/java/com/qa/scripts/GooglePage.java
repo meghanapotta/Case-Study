@@ -1,4 +1,4 @@
-package com.qa.pages;
+package com.qa.scripts;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

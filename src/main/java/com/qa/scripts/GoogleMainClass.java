@@ -4,8 +4,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.qa.pages.GooglePage;
-
 public class GoogleMainClass {
 	public static void main(String args[]) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver","D:\\MyFirstSeleniumProject\\Drivers\\chromedriver.exe");

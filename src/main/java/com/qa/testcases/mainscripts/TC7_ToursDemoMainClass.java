@@ -11,34 +11,36 @@ public class TC7_ToursDemoMainClass {
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "D:\\MyFirstMavenProject\\conf\\chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
-		ToursDemoPage newtourmain=new ToursDemoPage(driver);
+		ToursDemoPage tours=new ToursDemoPage(driver);
 		driver.manage().window().maximize();
 		driver.get("http://www.demo.guru99.com/test/newtours/");
 		
-		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		
-		newtourmain.getunamefield().sendKeys("mercury");
-		newtourmain.getpwdfield().sendKeys("mercury");
-		newtourmain.getsubmitbtn().click();
+		tours.getunamefield().sendKeys("mercury");
+		tours.getpwdfield().sendKeys("mercury");
+		tours.getsubmitbtn().click();
 		Thread.sleep(2000);
-		newtourmain.getflightslink().click();
+		tours.getflightslink().click();
 		Thread.sleep(2000);
-		newtourmain.getpassengercount().selectByIndex(3);
+		tours.getpassengercount().selectByIndex(3);
 		Thread.sleep(2000);
-		newtourmain.getdeparture().selectByValue("London");
+		tours.getdeparture().selectByValue("Paris");
 		Thread.sleep(2000);
-		newtourmain.getdeparturemonth().selectByValue("6");
+		tours.getdeparturemonth().selectByValue("7");
 		Thread.sleep(2000);
-		newtourmain.getdepartureday().selectByValue("14");
+		tours.getdepartureday().selectByValue("13");
 		Thread.sleep(2000);
-		newtourmain.getarrival().selectByVisibleText("New York");
+		tours.getarrival().selectByVisibleText("New York");
 		Thread.sleep(2000);
-		newtourmain.getreturningmonth().selectByVisibleText("July");
+		tours.getreturningmonth().selectByVisibleText("July");
 		Thread.sleep(2000);
-		newtourmain.getreturningday().selectByVisibleText("16");
+		tours.getreturningday().selectByVisibleText("19");
 		Thread.sleep(2000);
-		newtourmain.getcontinuebtn().click();
+		tours.getcontinuebtn().click();
+		System.out.println("Details entered successfully");
+		driver.close();
 
 	}
 

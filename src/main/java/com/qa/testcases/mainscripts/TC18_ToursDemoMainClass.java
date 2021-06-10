@@ -19,15 +19,15 @@ public class TC18_ToursDemoMainClass {
 		WebDriver driver=new ChromeDriver();
 		
 		
-		ToursDemoPage newtourmain=new ToursDemoPage(driver);
+		ToursDemoPage tours=new ToursDemoPage(driver);
 		driver.get("http://www.demo.guru99.com/test/newtours/");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		
-		newtourmain.getunamefield().sendKeys("mercury");
-		newtourmain.getpwdfield().sendKeys("mercury");
-		newtourmain.getsubmitbtn().click();
-		newtourmain.getflightslink().click();
+		tours.getunamefield().sendKeys("mercury");
+		tours.getpwdfield().sendKeys("mercury");
+		tours.getsubmitbtn().click();
+		tours.getflightslink().click();
 		List list=driver.findElements(By.name("fromPort"));
 		for(int i=0;i<list.size();i++)
 		{

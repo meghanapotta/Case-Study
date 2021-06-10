@@ -7,14 +7,15 @@ import org.openqa.selenium.support.PageFactory;
 public class GoogleSearchDemoPage {
 	WebDriver driver;
 	
-	@FindBy(xpath="/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")
+	@FindBy(name="q")
+
 	WebElement SearchTextField;
 	
 	public WebElement getSearchTextField() {
 		return SearchTextField;
 	}
 	
-	@FindBy(xpath="/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]")
+	@FindBy(name="btnK")
 	WebElement ClickSearchButton;
 	
 	public WebElement getClickSearchButton() {

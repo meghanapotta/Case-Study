@@ -15,24 +15,24 @@ public class TC11_MultiWindowsDemoMainClass {
 	{
 		 System.setProperty("webdriver.chrome.driver","D:\\MyFirstMavenProject\\conf\\chromedriver.exe");
 			WebDriver driver=new ChromeDriver();
-			MultipleWindowsDemo  gmailaccount =new MultipleWindowsDemo(driver);
+			MultipleWindowsDemo  gaccount =new MultipleWindowsDemo(driver);
 			driver.get("https://www.google.com/intl/en_in/gmail/about/");
-			gmailaccount.getCreateAccountUrl().click();
+			gaccount.getCreateAccountUrl().click();
 			Thread.sleep(2000);
-			gmailaccount.getTermsLink().click(); //2 window
+			gaccount.getTermsLink().click(); //2 window
 			Thread.sleep(2000);
-			gmailaccount.getPrivacyLink().click();   //3.window
+			gaccount.getPrivacyLink().click();   //3.window
 			Thread.sleep(2000);
 			Set<String> windowHandles = driver.getWindowHandles();
 			Thread.sleep(2000);
 			Iterator<String> iterator = windowHandles.iterator();
 			while(iterator.hasNext())
 			{
-				String Winid = iterator.next();
-				WebDriver window =driver.switchTo().window(Winid);
+				String Wid = iterator.next();
+				WebDriver window =driver.switchTo().window(Wid);
 				System.out.println(window.getTitle());
 				List<WebElement> Links = window.findElements(By.tagName("a"));
-				System.out.println("Total no of links present on the window  with id"+Winid+"are:"+Links.size());
+				System.out.println("Total no of links present on the window  with id"+Wid+"are:"+Links.size());
 			}
 			
 			driver.quit();

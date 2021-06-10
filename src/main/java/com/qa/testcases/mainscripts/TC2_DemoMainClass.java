@@ -3,7 +3,6 @@ package com.qa.testcases.mainscripts;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import com.qa.testcases.pages.EbayDemoPage;
 
 public class TC2_DemoMainClass {
@@ -12,20 +11,20 @@ public class TC2_DemoMainClass {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver","D:\\MyFirstMavenProject\\conf\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		EbayDemoPage page = new EbayDemoPage(driver);
+		EbayDemoPage epage = new EbayDemoPage(driver);
 		driver.get("https://www.ebay.com/");
-		page.getClickRegisterLink().click();
+		epage.getRegistrationLink().click();
 		Thread.sleep(3000);
-		WebElement email= page.getEmailField();
-		String emailaddress="test@test.com";
-		email.sendKeys(emailaddress);
-		email.clear();
+		WebElement emailaddress= epage.getEmailField();
+		String emailvalue="test@test.com";
+		emailaddress.sendKeys(emailvalue);
+		emailaddress.clear();
 		Thread.sleep(2000);
-		WebElement retypemail = page.getEmailField();
-		String retypemailaddress="test@test.com";
-		retypemail.sendKeys(retypemailaddress);
+		WebElement retypemail = epage.getEmailField();
+		String retypemailvalue="test@test.com";
+		retypemail.sendKeys(retypemailvalue);
 		
-		if(emailaddress.equals(retypemailaddress)) 
+		if(emailaddress.equals(retypemail)) 
 		{
 			System.out.println("Two fileds are matched");
 		}
